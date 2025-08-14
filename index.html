@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citra Aulia Mandiri</title>
+  <link rel="icon" type="image/png" href="img/logo-cam.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="img/logo-cam.png" alt="Logo" />
+      <span>Citra Aulia Mandiri</span>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul id="menu">
+        <li><a href="#hero">Beranda</a></li>
+        <li class="dropdown">
+          <a href="#tentang">Tentang</a>
+          <ul class="dropdown-menu">
+            <li><a href="#visi">Visi</a></li>
+            <li><a href="#misi">Misi</a></li>
+          </ul>
+        </li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero-slider">
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <h1>Selamat Datang di Citra Aulia Mandiri</h1>
+      <p>Mitra terpercaya untuk solusi bisnis Anda</p>
+      <a href="#tentang" class="btn-primary">Pelajari Lebih Lanjut</a>
+    </div>
+    <div class="slide active"><img src="https://images.pexels.com/photos/87236/pexels-photo-87236.jpeg?auto=compress&cs=tinysrgb&h=650&w=940&dpr=2&h=1080&w=1920" alt="Slide 1"></div>
+    <div class="slide"><img src="https://images.pexels.com/photos/257700/pexels-photo-257700.jpeg?auto=compress&cs=tinysrgb&h=650&w=940&dpr=2&h=1080&w=1920" alt="Slide 2"></div>
+    <div class="slide"><img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" alt="Slide 3"></div>
+    <div class="slide"><img src="https://images.pexels.com/photos/1463917/pexels-photo-1463917.jpeg" alt="Slide 4"></div>
+    <div class="slide"><img src="https://images.pexels.com/photos/159045/the-interior-of-the-repair-interior-design-159045.jpeg" alt="Slide 5"></div>
+    
+  </section>
+
+  <!-- TENTANG -->
+  <section id="tentang">
+    <h2>Tentang Kami</h2>
+    <p>PT Citra Aulia Mandiri adalah perusahaan nasional yang berdiri sejak tanggal 1 Juli 2006, bergerak di bidang jasa konstruksi dan pengadaan (EPC – Engineering, Procurement & Construction), dengan cakupan layanan yang luas dan terintegrasi. Didirikan dengan semangat untuk berkontribusi aktif dalam pembangunan infrastruktur di Indonesia, kami berkomitmen untuk memberikan solusi konstruksi yang inovatif, efisien, dan berkelanjutan.</p>
+    <p>Sejak awal berdiri, PT Citra Aulia Mandiri telah membangun reputasi sebagai mitra terpercaya dalam mengerjakan berbagai proyek konstruksi, baik skala menengah maupun besar, yang mencakup sektor publik maupun swasta. Lingkup layanan kami meliputi pekerjaan sipil, pembangunan dermaga (jetty), arsitektur, instalasi mekanikal & elektrikal, serta layanan desain interior dan bangunan dengan pendekatan design & build.</p>
+    <p>Kami percaya bahwa setiap proyek memiliki tantangan dan karakteristik unik. Oleh karena itu, kami mengutamakan pendekatan yang adaptif dan solutif, dengan mengedepankan kualitas, ketepatan waktu, serta efisiensi biaya. Seluruh pekerjaan dilaksanakan oleh tim profesional yang berpengalaman dan berdedikasi tinggi, serta didukung oleh teknologi dan sistem manajemen mutu yang terus dikembangkan.</p>
+  </section>
+
+  <!-- VISI -->
+  <section id="visi">
+    <h2>Visi Kami</h2>
+    <p>Menjadi perusahaan konstruksi nasional yang unggul dan terpercaya, dengan memberikan kontribusi nyata bagi pembangunan bangsa melalui layanan yang berkualitas, inovatif, dan berorientasi pada kepuasan pelanggan.</p>
+  </section>
+
+  <!-- MISI -->
+  <section id="misi">
+    <h2>Misi Kami</h2>
+    <ul>
+      <li>Memberikan layanan jasa konstruksi dan EPC yang profesional dan kompetitif.</li>
+      <li>Mengutamakan kualitas, keselamatan kerja, dan keberlanjutan lingkungan dalam setiap proyek.</li>
+      <li>Menjalin hubungan jangka panjang yang saling menguntungkan dengan mitra kerja, pelanggan, dan seluruh pemangku kepentingan.</li>
+      <li>Mendorong pengembangan sumber daya manusia yang unggul, berintegritas, dan adaptif terhadap perubahan.</li>
+    </ul>
+  </section>
+
+  <!-- PORTFOLIO -->
+<section id="portfolio" style="padding: 50px 0; background-color: #022f40;">
+  <div style="max-width: 1100px; margin: auto; text-align: center;">
+    <h2 style="margin-bottom: 30px; font-size: 2em; font-weight: bold;">Portfolio</h2>
+    <div class="portfolio-slider">
+      <div class="portfolio-track">
+        <img src="img/portfolio1.jpg" alt="Project 1">
+        <img src="img/portfolio2.jpg" alt="Project 2">
+        <img src="img/portfolio3.jpg" alt="Project 3">
+        <img src="img/portfolio4.jpg" alt="Project 4">
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.portfolio-slider {
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #03354a;
+  border-radius: 10px;
+  background: #03354a;
+  padding: 10px;
+}
+
+.portfolio-track {
+  display: flex;
+  gap: 20px; /* jarak antar foto */
+  transition: transform 0.5s ease;
+}
+
+.portfolio-track img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+</style>
+<script> 
+let currentIndex = 0;
+const track = document.querySelector('.portfolio-track');
+const slides = document.querySelectorAll('.portfolio-track img');
+const totalSlides = slides.length;
+
+slides.forEach((slide, index) => {
+  slide.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    track.style.transform = `translateX(-${currentIndex * (slides[0].clientWidth + 20)}px)`;
+  });
+});
+</script>
+
+<!-- GALERI -->
+ <section id="galeri" style="padding: 50px 0; background-color: #022f40;">
+  <div style="max-width: 1100px; margin: auto; text-align: center;">
+    <h2 style="margin-bottom: 30px; font-size: 2em; font-weight: bold;">Galeri</h2>
+<div class="gallery">
+  <div class="gallery-item">
+    <img src="img/employee-cam.png" alt="Foto 1">
+  </div>
+  <div class="gallery-item">
+    <img src="img/bromo.jpg" alt="Foto 2">
+  </div>
+  <div class="gallery-item">
+    <img src="img/portfolio4.jpg" alt="Foto 3">
+  </div>
+  <!-- tambah foto sesuai kebutuhan -->
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+  <a class="prev">&#10094;</a>
+  <a class="next">&#10095;</a>
+</div>
+
+<style>
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.gallery-item {
+  flex: 1 0 21%;
+  cursor: pointer;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+}
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+.close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  color: white;
+  font-size: 60px;
+  padding: 10px;
+  user-select: none;
+  transform: translateY(-50%);
+}
+.prev { left: 30px; }
+.next { right: 30px; }
+</style>
+
+<script>
+const galleryItems = document.querySelectorAll('.gallery-item img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.close');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+let portofolioIndex = 0;
+
+galleryItems.forEach((img, index) => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'block';
+    lightboxImg.src = img.src;
+    currentIndex = index;
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+  lightboxImg.src = galleryItems[currentIndex].src;
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % galleryItems.length;
+  lightboxImg.src = galleryItems[currentIndex].src;
+});
+
+window.addEventListener('click', e => {
+  if(e.target === lightbox) lightbox.style.display = 'none';
+});
+</script>
+
+
+  <!-- KONTAK -->
+  <section id="kontak">
+    <h2>Kontak Kami</h2>
+    <p>Email: <a href="mailto:citra_aulia_mandiri@yahoo.com">citra_aulia_mandiri@yahoo.com</a></p>
+    <p>Telepon: (0542)-8709-191 | <a href="https://wa.me/628125803593"> +62 812-5803-593 </a></p>
+    <p>Alamat: Komplek Ruko Pelangi Balikpapan Point A36 Sepinggan Baru, Kec. Balikpapan Selatan, Kota Balikpapan, Kalimantan Timur 76115</p>
+  </section>
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Citra Aulia Mandiri | Semua Hak Dilindungi</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  
+</body>
+</html>
