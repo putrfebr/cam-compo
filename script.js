@@ -1,50 +1,36 @@
-// ====== SLIDER ======
-let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
+document.addEventListener('DOMContentLoaded', function () {
+  // ====== MENU ACTIVE ======
+  const menuLinks = document.querySelectorAll("header nav ul li a");
 
-function showSlide(index) {
-  slides.forEach(slide => slide.classList.remove("active"));
-  slides[index].classList.add("active");
-}
-
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}
-
-setInterval(nextSlide, 4000); // ganti slide tiap 4 detik
-
-// ====== MENU ACTIVE ======
-const menuLinks = document.querySelectorAll("header nav ul li a");
-
-menuLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    menuLinks.forEach(l => l.classList.remove("active"));
-    link.classList.add("active");
-  });
-});
-
-// ====== SMOOTH SCROLL ======
-document.querySelectorAll('a[href^="#tentang"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      menuLinks.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
     });
   });
-});
-document.addEventListener('DOMContentLoaded', function () {
+
+  // ====== SMOOTH SCROLL (semua anchor ke section) ======
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+
+  // ====== MENU TOGGLE (Mobile) ======
   const menuToggle = document.querySelector('.menu-toggle');
   const menu = document.getElementById('menu');
 
-  // Toggle main menu on mobile
-  if (menuToggle) {
+  if (menuToggle && menu) {
     menuToggle.addEventListener('click', () => {
       menu.classList.toggle('show');
     });
   }
 
-  // Handle dropdown toggle only for mobile
+  // ====== DROPDOWN MENU (Mobile) ======
   document.querySelectorAll('#menu li').forEach(li => {
     const link = li.querySelector(':scope > a');
     const sub = li.querySelector(':scope > ul');
@@ -52,31 +38,51 @@ document.addEventListener('DOMContentLoaded', function () {
     if (sub && link) {
       link.addEventListener('click', (e) => {
         if (window.innerWidth <= 768) {
-          // Mobile: toggle submenu
           e.preventDefault();
           li.classList.toggle('open');
         }
-        // Desktop: no preventDefault -> link works normally
       });
     }
   });
 
-  // Optional: close menu when clicking outside (mobile)
+  // ====== TUTUP MENU KALAU KLIK DI LUAR (Mobile) ======
   document.addEventListener('click', (e) => {
     if (window.innerWidth <= 768) {
       const isClickInside = e.target.closest('header');
-      if (!isClickInside) {
+      if (!isClickInside && menu) {
         menu.classList.remove('show');
         document.querySelectorAll('#menu li.open').forEach(x => x.classList.remove('open'));
       }
     }
   });
 
-  // Close menu & dropdowns when resizing to desktop
+  // ====== RESET MENU SAAT RESIZE KE DESKTOP ======
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 768 && menu) {
       menu.classList.remove('show');
       document.querySelectorAll('#menu li.open').forEach(x => x.classList.remove('open'));
     }
   });
+
+  // ====== SLIDER (Otomatis) ======
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    if (slides[index]) {
+      slides[index].classList.add('active');
+    }
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    showSlide(currentIndex);
+  }
+
+  if (totalSlides > 0) {
+    showSlide(currentIndex); // Tampilkan pertama
+    setInterval(nextSlide, 3000); // Pindah tiap 3 detik
+  }
 });
